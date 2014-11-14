@@ -1,0 +1,4 @@
+Lider1,7,posicion1,nombre1
+Lider2,3,posicion2,nombre2
+Lider3,5,posicion3,nombre3
+Lider4,8,posicion4,nombre4

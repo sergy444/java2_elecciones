@@ -195,7 +195,36 @@ System.out.println(e.getMessage());
 
 
 
-
+File listaPartidos = new File("/home/zubiri/Proyectos_java/java2_elecciones/src/listaPartidos.txt");
+	FileInputStream fis = new FileInputStream(listaPartidos);
+		InputStreamReader isr = new InputStreamReader(fis);
+			BufferedReader br = new BufferedReader(isr);
+	ArrayList<Partido> partidosCompletos = new ArrayList<Partido>();
+	String linea;
+	linea = br.readLine();
+	while(linea!=null){
+		String [] campos = linea.split(",");
+		
+	
+		Partido partidos = new Partido(null,0,null,null);
+		partidos.setLider(campos[0]);
+		int num = Integer.parseInt(campos[1]);
+		partidos.setNumafiliados(num);
+		partidos.setPosicionideologica(campos[2]);
+		partidos.setNomenclatura(campos[3]);
+		partidosCompletos.add(partidos);
+		linea = br.readLine();
+	
+}
+System.out.println("\nLista de los partidos: \n\n");
+	for(int s=0; s < partidosCompletos.size(); s++){
+		System.out.println("--------------------------------------------");
+		System.out.println("Líder: "+(partidosCompletos.get(s)).getLider());
+		System.out.println("Número de afiliados: "+(partidosCompletos.get(s)).getNumafiliados());
+		System.out.println("Posición ideologica: "+(partidosCompletos.get(s)).getPosicionideologica());
+		System.out.println("Nombre del partido: "+(partidosCompletos.get(s)).getNomenclatura());
+		System.out.println("--------------------------------------------");
+}
 
 
  }
