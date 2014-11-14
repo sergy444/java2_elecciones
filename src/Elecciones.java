@@ -1,8 +1,8 @@
 import java.util.*;
-
+import java.io.*;
 public class Elecciones {
  
- public static void main(String[] args) {
+ public static void main(String[] args) throws IOException {
 
 Scanner sc = new Scanner(System.in);
 
@@ -161,6 +161,41 @@ System.out.print("\nEl nombre del partido es: " + partido.getNomenclatura());
 System.out.print("\nSu líder o presidente es: " + partido.getLider());
 System.out.print("\nTiene " + partido.getNumafiliados() + " " + "afiliados");
 System.out.print("\nSu posición ideologica es: " + partido.getPosicionideologica()); 
+
+
+
+
+//String nombredelfichero = "partidos.txt";
+String ruta = "/home/zubiri/Proyectos_java/java2_elecciones/src/partidos.txt";
+String salida;
+int i = 0;
+
+
+try {
+
+//File archivo = new File(ruta);
+FileReader leer = new FileReader (ruta);
+BufferedReader bf = new BufferedReader (leer);
+salida = bf.readLine();
+List<String> aList= new ArrayList<String>(Arrays.asList(salida.split(" ")));
+System.out.print("\n\n\nEstos son los partidos disponibles");
+for(int r=0;r<aList.size();r++)
+{
+
+System.out.println("\n--> " + aList.get(r));
+
+}
+
+}
+
+catch (FileNotFoundException e)
+{
+System.out.println(e.getMessage());
+}
+
+
+
+
 
 
  }
