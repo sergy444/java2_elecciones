@@ -77,7 +77,7 @@ int mcuad = 0;
 String tipoespacio = null;
 
 
-EspacioPublico espacio = new EspacioPublico(direccion, mcuad, tipoespacio);
+EspacioPublico espacio = new EspacioPublico (direccion, mcuad, tipoespacio);
 
 System.out.print("\nIntroduce la dirección del espacio: ");
 direccion = sc.next();
@@ -191,6 +191,7 @@ File listaPartidos = new File("/home/zubiri/Proyectos_java/java2_elecciones/src/
 		linea = br.readLine();
 	
 }
+System.out.println("\nObjetos leídos de archivo de manera satisfactoria\n\n");
 System.out.println("\nLista de los partidos: \n\n");
 
 	for(int s=0; s < partidosCompletos.size(); s++){
@@ -199,7 +200,7 @@ System.out.println("\nLista de los partidos: \n\n");
 		System.out.println("Número de afiliados: " + (partidosCompletos.get(s)).getNumafiliados());
 		System.out.println("Posición ideologica: " + (partidosCompletos.get(s)).getPosicionideologica());
 		System.out.println("Nombre del partido: " + (partidosCompletos.get(s)).getNomenclatura());
-	
+	System.out.println("--------------------------------------------");
 
 
 }
@@ -211,8 +212,8 @@ System.out.println("\nLista de los partidos: \n\n");
 	File listaHabitantes = new File("/home/zubiri/Proyectos_java/java2_elecciones/src/ListaHabitantes.txt");
 
 FileInputStream fis2 = new FileInputStream(listaHabitantes);
-InputStreamReader isr2 = new InputStreamReader(fis);
-BufferedReader br2 = new BufferedReader(isr);
+InputStreamReader isr2 = new InputStreamReader(fis2);
+BufferedReader br2 = new BufferedReader(isr2);
 
 ArrayList<Habitante> habitantesFull = new ArrayList<Habitante>();
 
@@ -236,9 +237,10 @@ habitantesFull.add(habitant);
 lineas = br2.readLine();
 }lineas = br2.readLine();
 }
+System.out.println("\nObjetos leídos de archivo de manera satisfactoria\n\n");
 System.out.println("\nLista de los habitantes mayores de 18 años: \n\n");
 for(int v=0; v < habitantesFull.size(); v++){
-System.out.println("--------------------------------------------");
+
 System.out.println("Nombre: "+(habitantesFull.get(v)).getNombre());
 System.out.println("Edad: "+(habitantesFull.get(v)).getEdad());
 System.out.println("Dni: "+(habitantesFull.get(v)).getDni());
